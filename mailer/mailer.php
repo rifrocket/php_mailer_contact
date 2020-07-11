@@ -18,10 +18,10 @@ $HOME_PATH = $_SERVER['SERVER_NAME'];
 //SET ENVOIRMENT
 if(trim($_ENV['TESTING'])=='true') {
 
-    $MAIL_HOST= trim( $_ENV['MAIL_HOST_TEST']==''?'smtp.mailtrap.io':$_ENV['MAIL_HOST_TEST']);
-    $MAIL_PORT= trim( $_ENV['MAIL_PORT_TEST']==''?'2525':$_ENV['MAIL_PORT_TEST']);
-    $MAIL_USERNAME= trim( $_ENV['MAIL_USERNAME_TEST']==''?'4be2332fd616ca':$_ENV['MAIL_USERNAME_TEST']);
-    $MAIL_PASSWORD= trim( $_ENV['MAIL_PASSWORD_TEST']==''?'72e31ca4de1958':$_ENV['MAIL_PASSWORD_TEST']);
+       $MAIL_HOST= trim( $_ENV['MAIL_HOST_TEST']==''?'':$_ENV['MAIL_HOST_TEST']);
+    $MAIL_PORT= trim( $_ENV['MAIL_PORT_TEST']==''?'':$_ENV['MAIL_PORT_TEST']);
+    $MAIL_USERNAME= trim( $_ENV['MAIL_USERNAME_TEST']==''?'':$_ENV['MAIL_USERNAME_TEST']);
+    $MAIL_PASSWORD= trim( $_ENV['MAIL_PASSWORD_TEST']==''?'':$_ENV['MAIL_PASSWORD_TEST']);
     $MAIL_ENCRYPTION= trim( $_ENV['MAIL_ENCRYPTION_TEST']==''?'ssl':$_ENV['MAIL_ENCRYPTION_TEST']);   
 }
 else
