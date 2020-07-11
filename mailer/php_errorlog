@@ -1,0 +1,4 @@
+[29-Jun-2020 03:21:06 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function verifyInput() in /home/proj3669/public_html/qmitra/mailer/mailer.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/proj3669/public_html/qmitra/mailer/mailer.php on line 23
