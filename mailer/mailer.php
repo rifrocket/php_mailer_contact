@@ -16,29 +16,19 @@ $mail = new PHPMailer(true);
 $HOME_PATH = $_SERVER['SERVER_NAME'];   
 
 //SET ENVOIRMENT
-if(trim($_ENV['TESTING'])=='true') {
+    $MAIL_HOST= trim($_ENV['TESTING']=='true'?$_ENV['MAIL_HOST_TEST']:$_ENV['MAIL_HOST']);
+    $MAIL_PORT= trim($_ENV['TESTING']=='true'?$_ENV['MAIL_PORT_TEST']:$_ENV['MAIL_PORT']);
+    $MAIL_USERNAME= trim($_ENV['TESTING']=='true'?$_ENV['MAIL_USERNAME_TEST']:$_ENV['MAIL_USERNAME']);
+    $MAIL_PASSWORD= trim($_ENV['TESTING']=='true'?$_ENV['MAIL_PASSWORD_TEST']:$_ENV['MAIL_PASSWORD']);
+    $MAIL_ENCRYPTION= trim($_ENV['TESTING']=='true'?$_ENV['MAIL_ENCRYPTION_TEST']:$_ENV['MAIL_ENCRYPTION']);
 
-       $MAIL_HOST= trim( $_ENV['MAIL_HOST_TEST']==''?'':$_ENV['MAIL_HOST_TEST']);
-    $MAIL_PORT= trim( $_ENV['MAIL_PORT_TEST']==''?'':$_ENV['MAIL_PORT_TEST']);
-    $MAIL_USERNAME= trim( $_ENV['MAIL_USERNAME_TEST']==''?'':$_ENV['MAIL_USERNAME_TEST']);
-    $MAIL_PASSWORD= trim( $_ENV['MAIL_PASSWORD_TEST']==''?'':$_ENV['MAIL_PASSWORD_TEST']);
-    $MAIL_ENCRYPTION= trim( $_ENV['MAIL_ENCRYPTION_TEST']==''?'ssl':$_ENV['MAIL_ENCRYPTION_TEST']);   
-}
-else
-{
-    $MAIL_HOST= trim( $_ENV['MAIL_HOST']);
-    $MAIL_PORT= trim( $_ENV['MAIL_PORT']);
-    $MAIL_USERNAME= trim( $_ENV['MAIL_USERNAME']);
-    $MAIL_PASSWORD= trim( $_ENV['MAIL_PASSWORD']);
-    $MAIL_ENCRYPTION= trim( $_ENV['MAIL_ENCRYPTION']);
-}
 
-    $MAIL_SENDER= trim( $_ENV['MAIL_SENDER']==''?'example@mail.com':$_ENV['MAIL_SENDER']);
-    $MAIL_SUBJECT= trim( $_ENV['MAIL_SUBJECT']==''?'email subject':$_ENV['MAIL_SUBJECT']);
-    $MAIL_SENDER_NAME= trim( $_ENV['MAIL_SENDER_NAME']==''?'RifRocket':$_ENV['MAIL_SENDER_NAME']);
-    $LOGO_PATH= trim( $_ENV['LOGO_PATH']==''?'/success.png':$_ENV['LOGO_PATH']);
-    $EMAIL_TITLE= trim( $_ENV['EMAIL_TITLE']==''?'email title':$_ENV['EMAIL_TITLE']);
-    $MESSAGE_INFORMATION= trim( $_ENV['MESSAGE_INFORMATION']==''?'message body':$_ENV['MESSAGE_INFORMATION']);
+    $MAIL_SENDER= trim($_ENV['MAIL_SENDER']==''?'example@mail.com':$_ENV['MAIL_SENDER']);
+    $MAIL_SUBJECT= trim($_ENV['MAIL_SUBJECT']==''?'email subject':$_ENV['MAIL_SUBJECT']);
+    $MAIL_SENDER_NAME= trim($_ENV['MAIL_SENDER_NAME']==''?'RifRocket':$_ENV['MAIL_SENDER_NAME']);
+    $LOGO_PATH= trim($_ENV['LOGO_PATH']==''?'/success.png':$_ENV['LOGO_PATH']);
+    $EMAIL_TITLE= trim($_ENV['EMAIL_TITLE']==''?'email title':$_ENV['EMAIL_TITLE']);
+    $MESSAGE_INFORMATION= trim($_ENV['MESSAGE_INFORMATION']==''?'message body':$_ENV['MESSAGE_INFORMATION']);
 
 
  //Input Verification function
